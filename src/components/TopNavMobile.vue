@@ -1,28 +1,25 @@
 <template>
+
     <div class="TopNav">
         <img 
-        class="logo" 
-        src="../assets/furesign_icon.png" 
-        alt="FuResign"/>
+            class="logoMobile" 
+            src="../assets/furesign_icon.png" 
+            alt="FuResign"/>
 
-        <h1 class="furesign"> FuResign </h1>
-
-        <div class="router">
-            <router-link class="home" to="/">HOME</router-link>
-            <router-link class="market" to="/demo">MARKETPLACE</router-link>
-        </div>
+        <h1 class="furesignMobile"> FuResign </h1>
     </div>
+
 </template>
 
 <script>
 
 export default {
-    name:'TopNav'
+    name:'TopNavMobile'
 }
 
 </script>
 
-<style>
+<style scoped>
 
 @import url('/font-awesome-4.6.3/css/font-awesome.min.css');
 

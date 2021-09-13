@@ -1,18 +1,18 @@
 <template>
 
 <section>
-    <div class="home">
+  <div class="home">
     <img alt="Vue logo" src="../assets/logo.png">
     <h1> This is home </h1>
   </div>
 </section>
 
-<section>
-    <div class="home">
+<!-- <section>
+  <div class="home">
     <img alt="Vue logo" src="../assets/logo.png">
     <h1> This is home </h1>
   </div>
-</section>
+</section> -->
 
 </template>
 
@@ -26,8 +26,8 @@ export default {
 
 <style scoped>
 section {
- background-color: rgb(255, 255, 255);
- border-radius: 20px;
+ /* background-color: rgb(255, 255, 255);
+ border-radius: 20px; */
  margin: 5px 5px 5px 5px;
 }
 </style>
