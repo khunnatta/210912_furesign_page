@@ -1,14 +1,18 @@
 <template>
 
   <NavigationMobile/>
-  <div class="content">
+  <div class="content" :class="{'open':showNav}">
 
     <nav class="nav">
+
       <TopNav v-if="!mobileView"/>
       <TopNavMobile v-if="mobileView"/>
-        <div id="routerIcon">
-          <i class="fas fa-bars"></i>
-        </div>
+
+      <div class="routerIcon" v-if="mobileView"
+      @click="showNav = !showNav">
+        <i class="fas fa-bars"></i>
+      </div>
+
     </nav>
 
     <router-view/>
@@ -41,7 +45,6 @@ export default {
   methods: {
     handleView(){
     this.mobileView = window.innerWidth <= 1100;
-    console.log(this.mobileView)
     }
   },
 
@@ -63,9 +66,8 @@ export default {
 
 .routerIcon {
   cursor: pointer;
-  float: right;
-  /* position: absolute;
-  left: 10rem; */
+  position: absolute;
+  right: 2.5rem;
 }
 
 i {
@@ -82,10 +84,11 @@ i {
   border-radius: 30px;
   background-color: #fff;
   box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+  transition: 1s transform cubic-bezier(.19,.78,.23,.96);
 }
 
 .open {
-  transform: translateX(300px);
+  transform: translateX(-200px);
 }
 
 #app {

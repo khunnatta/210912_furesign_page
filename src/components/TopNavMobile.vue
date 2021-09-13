@@ -28,9 +28,9 @@ export default {
     align-items: center;
     /* background-color: rgb(248, 248, 248);
     border-radius: 20px; */
-    margin: 10px 5px 15px 5px;
+    /* margin: 10px 5px 15px 5px;
     padding: 0px;
-    height: 60px;
+    height: 60px; */
 
 }
 
