@@ -15,7 +15,7 @@
     </nav>
   </div>
 
-  <div class="content" :class="{'open':showNav}">
+  <div class="contentApp" :class="{'open':showNav}">
     <router-view/>
   </div>
 
@@ -85,7 +85,7 @@ i {
   color: #2c3e50;
 }
 
-.contentTop {
+ .contentTop {
   position: absolute;
   top: 10px;
   left: 10px;
@@ -97,16 +97,13 @@ i {
   transition: 1s transform cubic-bezier(.19,.78,.23,.96);
 }
 
-.content {
+.contentApp {
   position: absolute;
-  top: 80px;
-  left: 10px;
-  width: calc(100% - 60px);
-  /* height: calc(100% - 60px); */
+  top: 0px;
+  left: 5px;
+  width: calc(100% - 50px);
   padding: 20px;
   border-radius: 30px;
-  background-color: #fff;
-  box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
   transition: 1s transform cubic-bezier(.19,.78,.23,.96);
 }
 

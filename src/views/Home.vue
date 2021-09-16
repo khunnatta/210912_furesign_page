@@ -1,7 +1,7 @@
 <template>
 
   <div class="home">
-
+    <div class="contentTop">
     <section class="topic">
       <h2 style="text-align:center">ตลาดสินค้าเฟอร์นิเจอร์และของตกแต่งบ้านออนไลน์</h2>
       <h1><b>ค้นหาง่าย</b>ทั้งไอเดียและสินค้า</h1>
@@ -11,7 +11,9 @@
     <section class="image">
       <img alt="demo" src="../assets/demo_01.jpg">
     </section>
+    </div>
 
+    <div class="content">
     <section class="description">
 
       <div class="subTopic">
@@ -27,24 +29,152 @@
       <h2>ตลาดสินค้าเฟอร์นิเจอร์และของตกแต่งบ้านที่ค้นหาได้ง่ายผ่านรูปภาพ</h2>
       
     </section>
+    </div>
 
+  <div class="content2">
     <section>
-      
+      <h1>ทำไม? ต้องซื้อเฟอร์นิเจอร์ของตกแต่งผ่าน <b>Furesign</b></h1> 
     </section>
+  </div>
+
+  <div class="content3">
+    <section>
+      <h1><b>ค้นหาสินค้าได้ง่าย</b>ผ่านคำและรูปภาพ</h1> 
+      <div class="subTopic2">
+        <img src="../assets/Pic2-V4_crop.gif" alt="search by image">
+        <h2>ช่วยคุณค้นหาสินค้าได้ง่ายผ่านรูปภาพ โดยระบบจะค้นหาสินค้าที่เหมือนหรือใกล้เคียงกับภาพต้นแบบมากที่สุด 
+        </h2>
+      </div>
+    </section>
+  </div>
+
+  <div class="content4">
+    <section>
+      <h1><b>แหล่งรวบรวมไอเดีย</b>การตกแต่งพื้นที่</h1>
+      <div class="subTopic2">
+      <img src="../assets/pic3-V3.png" alt="idea community">
+      <h2>หาไอเดียการแต่งบ้านและพื้นที่ต่าง ๆ ได้ง่ายผ่านแหล่งชุมชนออนไลน์บน Furesign</h2>
+      </div>
+    </section>
+  </div>
+
+  <div class="content5">
+    <section>
+      <h1><b>แนะนำสินค้า</b>ที่ตรงตามไอเดียที่สนใจ</h1>
+      <div class="subTopic2">
+      <img src="../assets/pic4-V2.png" alt="idea recommendation">
+      <h2>สั่งซื้อสินค้าผ่านไอเดียที่คุณสนใจได้ง่ายผ่านระบบของ Furesign</h2> 
+      </div>
+    </section>
+  </div>
 
   </div>
 
 </template>
 
 <script>
+import { Splide, SplideSlide } from '@splidejs/vue-splide';
+import '@splidejs/splide/dist/css/themes/splide-default.min.css';
+
 export default {
-  name: 'Home'
+  name: 'Home',
+  components: {
+    Splide,
+    SplideSlide,
+  },
+  data:() => {
+    return {
+      options: {
+        rewind : true,
+        width  : 800,
+        gap    : '1rem',
+      }
+    }
+  }
 }
 </script>
 
 <style scoped>
 
 @import url('https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;500&display=swap');
+
+.contentTop {
+  position: absolute;
+  top: 80px;
+  left: 5px;
+  width: calc(100% - 50px);
+  /* height: calc(100% - 60px); */
+  padding: 20px;
+  border-radius: 30px;
+  background-color: #fff;
+  box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+  transition: 1s transform cubic-bezier(.19,.78,.23,.96);
+}
+
+.content {
+  position: absolute;
+  top: 590px;
+  left: 5px;
+  width: calc(100% - 50px);
+  /* height: calc(100% - 60px); */
+  padding: 20px;
+  border-radius: 30px;
+  background-color: #fff;
+  box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+  transition: 1s transform cubic-bezier(.19,.78,.23,.96);
+}
+
+.content2 {
+  position: absolute;
+  top: 1045px;
+  left: 5px;
+  width: calc(100% - 50px);
+  /* height: calc(100% - 60px); */
+  padding: 20px;
+  border-radius: 30px;
+  background-color: #fff;
+  box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+  transition: 1s transform cubic-bezier(.19,.78,.23,.96);
+}
+
+.content3 {
+  position: absolute;
+  top: 1210px;
+  left: 5px;
+  width: calc(100% - 50px);
+  /* height: calc(100% - 60px); */
+  padding: 20px;
+  border-radius: 30px;
+  background-color: #fff;
+  box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+  transition: 1s transform cubic-bezier(.19,.78,.23,.96);
+}
+
+.content4 {
+  position: absolute;
+  top: 1830px;
+  left: 5px;
+  width: calc(100% - 50px);
+  /* height: calc(100% - 60px); */
+  padding: 20px;
+  border-radius: 30px;
+  background-color: #fff;
+  box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+  transition: 1s transform cubic-bezier(.19,.78,.23,.96);
+}
+
+.content5 {
+  position: absolute;
+  top: 2450px;
+  left: 5px;
+  width: calc(100% - 50px);
+  /* height: calc(100% - 60px); */
+  padding: 20px;
+  border-radius: 30px;
+  background-color: #fff;
+  box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+  transition: 1s transform cubic-bezier(.19,.78,.23,.96);
+}
 
 .home {
   font-family: 'Prompt', sans-serif;
@@ -119,11 +249,57 @@ display: block;  /* may not need this, but I've found I do */
   transform: translate(50%, -50%); */
 }
 
-.description img {
+.subTopic img {
   width: 3em;
   height: 100%;
   margin-right: 3px;
 
+}
+
+.subTopic2{
+  /* display: flex;
+  align-items: center;
+  align-content: center;
+  margin-left: 10vw; */
+  /* -ms-transform: translate(-50%, -50%);
+  transform: translate(50%, -50%); */
+}
+
+.subTopic2 img {
+  width: 13em;
+  height: 100%;
+  margin-left: 15vw;
+}
+
+.content4 img {
+  width: 10em;
+  height: 100%;
+  margin-left: 5vw;
+}
+
+.content5 img {
+  width: 10em;
+  height: 100%;
+  margin-left: 4vw;
+}
+
+.slider{
+  position: relative;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
+.box {
+  border: 3px solid;
+  width: 280px;
+  height: 100px;
+  border-radius: 30px;
+  text-align: center;
+  position: relative;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, 0);
 }
 
 </style>
