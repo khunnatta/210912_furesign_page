@@ -22,23 +22,23 @@ export default {
 
 <style scoped>
 
-.navigationMobile {
-    float: right;
-    position: absolute;
-    top: 3rem;
-    right: 2rem;
-}
 
 ul {
     list-style: none;
-    text-align:left;
+    display: flex;
+    align-items: center;
+    margin-bottom: 5px;
+    padding: 0px;
 }
 
 li {
+    display: inline-block;
     color: #fff;
-    font-size: 1.3rem;
+    font-size: 0.9rem;
     font-weight: bold;
-    margin-bottom: 15px;
+    margin-left: 0.4rem;
+    margin-right: 0.4rem;
+    margin-bottom: 0px;
     cursor: pointer;
 }
 

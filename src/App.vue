@@ -1,23 +1,23 @@
 <template>
 
-  <NavigationMobile/>
-  <div class="content" :class="{'open':showNav}">
+  <NavigationMobile class="navigationMobile"/>
 
+  <div class="contentTop">
     <nav class="nav">
 
       <TopNav v-if="!mobileView"/>
       <TopNavMobile v-if="mobileView"/>
 
-      <div class="routerIcon" v-if="mobileView"
-      @click="showNav = !showNav">
+      <div class="routerIcon" v-if="mobileView" @click="showNav = !showNav">
         <i class="fas fa-bars"></i>
       </div>
 
     </nav>
-
-    <router-view/>
   </div>
 
+  <div class="content" :class="{'open':showNav}">
+    <router-view/>
+  </div>
 
 </template>
 
@@ -38,14 +38,15 @@ export default {
   data: function() {
     return{
       showNav: false,
-      mobileView: false   
+      mobileView: false,
+      miniView: false  
     }
   },
 
   methods: {
     handleView(){
-    this.mobileView = window.innerWidth <= 1100;
-    }
+      this.mobileView = window.innerWidth <= 700;
+    },
   },
 
   created() {
@@ -58,10 +59,19 @@ export default {
 
 <style>
 
+.navigationMobile{
+  position: absolute;
+  top: 100px;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
 .nav {
   display: flex;
   align-items: center;
   width: 100%;
+  height: 20px;
 }
 
 .routerIcon {
@@ -75,11 +85,24 @@ i {
   color: #2c3e50;
 }
 
-.content {
+.contentTop {
   position: absolute;
   top: 10px;
+  left: 10px;
   width: calc(100% - 60px);
-  height: calc(100% - 60px);
+  padding: 20px;
+  border-radius: 20px;
+  background-color: #fff;
+  box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+  transition: 1s transform cubic-bezier(.19,.78,.23,.96);
+}
+
+.content {
+  position: absolute;
+  top: 80px;
+  left: 10px;
+  width: calc(100% - 60px);
+  /* height: calc(100% - 60px); */
   padding: 20px;
   border-radius: 30px;
   background-color: #fff;
@@ -88,7 +111,7 @@ i {
 }
 
 .open {
-  transform: translateX(-200px);
+  transform: translateY(65px);
 }
 
 #app {
