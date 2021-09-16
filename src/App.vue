@@ -107,8 +107,11 @@ i {
   transition: 1s transform cubic-bezier(.19,.78,.23,.96);
 }
 
+ 
+
 .open {
   transform: translateY(65px);
+  z-index: -1;
 }
 
 #app {

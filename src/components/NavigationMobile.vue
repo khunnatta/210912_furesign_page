@@ -2,9 +2,9 @@
     <div class="navigationMobile">
 
         <ul>
-            <li>HOME</li>
-            <li>MARKETPLACE</li>
-            <li> COMMUNITY </li>
+            <li><a class="link-to-page" href="/">HOME</a></li>
+            <li><a class="link-to-page" href="/marketplace">MARKETPLACE</a></li>
+            <li><a class="link-to-page" href="/community">COMMUNITY</a> </li>
         </ul>
 
         <div class="socialMedia">
@@ -31,7 +31,7 @@ ul {
     padding: 0px;
 }
 
-li {
+li, .link-to-page {
     display: inline-block;
     color: #fff;
     font-size: 0.9rem;

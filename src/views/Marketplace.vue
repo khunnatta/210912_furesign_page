@@ -1,9 +1,10 @@
 <template>
 <section>
-  <div class="about">
-    <!-- <h1>This is an about page</h1> -->
+  <div class="marketplace">
+    <!-- <h1>This is a Marketplace page</h1> -->
   </div>
   </section>
+
 </template>
 
 
@@ -28,6 +29,7 @@ export default {
   }
 }
 </script>
+
 
 <style scoped>
 
