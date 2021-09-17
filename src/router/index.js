@@ -1,9 +1,10 @@
-import { createRouter, createWebHistory } from 'vue-router'
+import { createRouter, createWebHistory } from 'vue-router';
 import ResultController from '../views/ResultController.vue';
-import Home from '../views/Home.vue'
-import About from '../views/About.vue'
-import Marketplace from '../views/Marketplace.vue'
-import Community from '../views/Community.vue'
+import Home from '../views/Home.vue';
+import About from '../views/About.vue';
+import Marketplace from '../views/Marketplace.vue';
+import Community from '../views/Community.vue';
+import CameraAction from '../views/CameraAction.vue';
 
 const routes = [
   {
@@ -39,6 +40,11 @@ const routes = [
     name: 'ResultController',
     component: ResultController
   },
+  {
+    path: '/camera_action',
+    name: 'CameraAction',
+    component: CameraAction
+  }
 ]
 
 const router = createRouter({

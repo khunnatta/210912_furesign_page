@@ -1,52 +1,12 @@
 <template>
-
   <div class="home">
     <div class="contentTop">
     <section class="topic">
       <h2 style="text-align:center">ตลาดสินค้าเฟอร์นิเจอร์และของตกแต่งบ้านออนไลน์</h2>
       <h1><b>ค้นหาง่าย</b>ทั้งไอเดียและสินค้า</h1>
 
-      <!-- Camera  -->
-      <!-- <button  id="myBtn"> ค้นหาสินค้า </button> -->
-      <div id="app-cam">
-        <div class="camera-button">
-          <button type="button" class="button is-rounded" :class="{ 'is-primary' : !isCameraOpen, 'is-danger' : isCameraOpen}" @click="toggleCamera">
-            <span v-if="!isCameraOpen">ค้นหาสินค้า</span>
-            <span v-else>Close Camera</span>
-          </button>
-        </div>
-    
-        <div v-show="isCameraOpen && isLoading" class="camera-loading">
-          <ul class="loader-circle">
-            <li></li>
-            <li></li>
-            <li></li>
-          </ul>
-        </div>
-    
-        <div v-if="isCameraOpen" v-show="!isLoading" class="camera-box" :class="{ 'flash' : isShotPhoto }">
-          
-          <div class="camera-shutter" :class="{'flash' : isShotPhoto}"></div>
-            
-          <video v-show="!isPhotoTaken" ref="camera" :width="450" :height="337.5" autoplay></video>
-          
-          <canvas v-show="isPhotoTaken" id="photoTaken" ref="canvas" :width="450" :height="337.5"></canvas>
-        </div>
-    
-        <div v-if="isCameraOpen && !isLoading" class="camera-shoot">
-          <button type="button" class="button" @click="takePhoto">
-            <img src="https://img.icons8.com/material-outlined/50/000000/camera--v2.png">
-          </button>
-        </div>
-    
-        <div v-if="isPhotoTaken && isCameraOpen" class="camera-download">
-          <a id="downloadPhoto" download="my-photo.jpg" class="button" role="button" @click="downloadImage">
-            Download
-          </a>
-        </div>
-      </div>
+      <button @click="$router.push({path: 'camera_action'})">ค้นหาสินค้า</button>
 
-    <!-- Camera End -->
 
     </section>
 
@@ -172,7 +132,7 @@ export default {
                   })
                   .catch(error => {
             this.isLoading = false;
-                      alert("May the browser didn't support or there is some errors.");
+                      alert(`May the browser didn't support or there is some errors. ${error.message}`);
                   });
       },
       
@@ -212,7 +172,6 @@ export default {
 </script>
 
 <style scoped>
-@import '../assets/css/cameraSet.scss';
 @import url('https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;500&display=swap');
 
 .contentTop {
