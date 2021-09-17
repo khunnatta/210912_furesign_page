@@ -9,7 +9,7 @@
 
         <div class="router">
             <router-link class="home" to="/">HOME</router-link>
-            <router-link class="market" to="/demo">MARKETPLACE</router-link>
+            <router-link class="market" to="/marketplace">MARKETPLACE</router-link>
         </div>
     </div>
 </template>
@@ -29,12 +29,9 @@ export default {
 .TopNav {
     display: flex;
     align-items: center;
-    /* background-color: rgb(248, 248, 248);
-    border-radius: 20px; */
     margin: 10px 5px 15px 5px;
     padding: 0px;
     height: 60px;
-
 }
 
 .logo {

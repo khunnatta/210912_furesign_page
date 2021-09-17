@@ -4,14 +4,11 @@
 
   <div class="contentTop">
     <nav class="nav">
-
-      <TopNav v-if="!mobileView"/>
+      <TopNav v-if="!mobileView"/> 
       <TopNavMobile v-if="mobileView"/>
-
       <div class="routerIcon" v-if="mobileView" @click="showNav = !showNav">
         <i class="fas fa-bars"></i>
       </div>
-
     </nav>
   </div>
 
@@ -26,20 +23,23 @@
 import TopNav from '@/components/TopNav.vue'
 import TopNavMobile from '@/components/TopNavMobile.vue'
 import NavigationMobile from '@/components/NavigationMobile.vue'
+import HomeMobile from '@/components/HomeMobile.vue'
+import HomeDesktop from '@/components/HomeDesktop.vue'
 
 export default {
 
   components: {
     TopNav,
     TopNavMobile,
-    NavigationMobile
+    NavigationMobile,
+    HomeMobile,
+    HomeDesktop
   },
 
   data: function() {
     return{
       showNav: false,
-      mobileView: false,
-      miniView: false  
+      mobileView: false
     }
   },
 
@@ -100,14 +100,10 @@ i {
 .contentApp {
   position: absolute;
   top: 0px;
-  left: 5px;
-  width: calc(100% - 50px);
-  padding: 20px;
-  border-radius: 30px;
+  left: 0px;
+  width: 100%;
   transition: 1s transform cubic-bezier(.19,.78,.23,.96);
 }
-
- 
 
 .open {
   transform: translateY(65px);
