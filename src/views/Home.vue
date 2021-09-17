@@ -5,7 +5,7 @@
       <h2 style="text-align:center">ตลาดสินค้าเฟอร์นิเจอร์และของตกแต่งบ้านออนไลน์</h2>
       <h1><b>ค้นหาง่าย</b>ทั้งไอเดียและสินค้า</h1>
 
-      <button @click="$router.push({path: 'camera_action'})">ค้นหาสินค้า</button>
+      <button @click="$router.push({path: 'marketplace'})">ค้นหาสินค้า</button>
 
 
     </section>
@@ -113,8 +113,7 @@ export default {
           this.isCameraOpen = true;
           this.createCameraElement();
         }
-      },
-      
+      }, 
       createCameraElement() {
         this.isLoading = true;
         
@@ -330,15 +329,6 @@ display: block;  /* may not need this, but I've found I do */
   height: 100%;
   margin-right: 3px;
 
-}
-
-.subTopic2{
-  /* display: flex;
-  align-items: center;
-  align-content: center;
-  margin-left: 10vw; */
-  /* -ms-transform: translate(-50%, -50%);
-  transform: translate(50%, -50%); */
 }
 
 .subTopic2 img {
