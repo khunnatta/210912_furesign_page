@@ -29,7 +29,7 @@ export default {
 .TopNav {
     display: flex;
     align-items: center;
-    margin: 10px 5px 15px 5px;
+    margin: 10px 0px 15px 0px;
     padding: 0px;
     height: 60px;
 }

@@ -2,15 +2,21 @@
 
   <NavigationMobile class="navigationMobile"/>
 
-  <div class="contentTop">
+  <div class="contentTopDesktop" v-if="!mobileView">
     <nav class="nav">
-      <TopNav v-if="!mobileView"/> 
-      <TopNavMobile v-if="mobileView"/>
+      <TopNav/> 
+    </nav>
+  </div>
+
+  <div class="contentTopMobile" v-if="mobileView">
+    <nav class="nav">
+      <TopNavMobile/>
       <div class="routerIcon" v-if="mobileView" @click="showNav = !showNav">
         <i class="fas fa-bars"></i>
       </div>
     </nav>
   </div>
+
 
   <div class="contentApp" :class="{'open':showNav}">
     <router-view/>
@@ -70,7 +76,6 @@ export default {
 .nav {
   display: flex;
   align-items: center;
-  width: 100%;
   height: 20px;
 }
 
@@ -85,11 +90,23 @@ i {
   color: #2c3e50;
 }
 
- .contentTop {
+ .contentTopMobile {
   position: absolute;
   top: 10px;
   left: 10px;
   width: calc(100% - 60px);
+  padding: 20px;
+  border-radius: 20px;
+  background-color: #fff;
+  box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+  transition: 1s transform cubic-bezier(.19,.78,.23,.96);
+}
+
+ .contentTopDesktop {
+  position: absolute;
+  top: 10px;
+  left: 60px;
+  width: calc(100% - 170px);
   padding: 20px;
   border-radius: 20px;
   background-color: #fff;
