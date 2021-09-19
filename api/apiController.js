@@ -49,12 +49,13 @@ app.get('/selection', function (req, res) {
 var upload = (0, multer_1.default)({
     dest: '../imgInput',
     limits: {
-        fieldSize: 1000000
+        fieldSize: 5000000
     }
 });
 // รับรูปเข้ามา จาก axios หน้าบ้าน 
 app.post('/single-file', upload.single('file'), function (req, res) {
     var _a, _b, _c, _d, _e, _f, _g, _h;
+    console.log(req.body.file);
     var log_input = {
         fieldname: (_a = req.file) === null || _a === void 0 ? void 0 : _a.fieldname,
         originalname: (_b = req.file) === null || _b === void 0 ? void 0 : _b.originalname,

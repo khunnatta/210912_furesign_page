@@ -4,6 +4,7 @@ import Home from '../views/Home.vue';
 import About from '../views/About.vue';
 import Marketplace from '../views/Marketplace.vue';
 import Community from '../views/Community.vue';
+import Tester from '../views/Tester.vue';
 // import CameraAction from '../views/CameraAction.vue';
 
 const routes = [
@@ -39,6 +40,11 @@ const routes = [
     path:'/result',
     name: 'ResultController',
     component: ResultController
+  },
+  {
+    path:'/tester',
+    name: 'Tester',
+    component: Tester
   }
   // ,{
   //   path: '/camera_action',
