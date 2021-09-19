@@ -3,6 +3,10 @@
         <div class="marketplace">
             <div class="contentTop">
                 <!-- Camera  -->
+                <section class="topic">
+                  <h2 style="text-align:center">ตลาดสินค้าเฟอร์นิเจอร์และของตกแต่งบ้านออนไลน์</h2>
+                  <h1>ทดลองค้นหาสินค้าด้วย<b>ภาพถ่าย</b></h1>
+                </section>
                 <div id="app-cam">
                     <div class="camera-button">
                     <button type="button" class="button is-rounded" :class="{ 'is-primary' : !isCameraOpen, 'is-danger' : isCameraOpen}" @click="toggleCamera">
@@ -38,9 +42,6 @@
         </div>
     </section>
 </template>
-
-
-
 
 <script>
 import { Splide, SplideSlide } from '@splidejs/vue-splide';
@@ -90,8 +91,6 @@ export default {
                   audio: false,
                   video: true
               });
-  
-  
               navigator.mediaDevices
                   .getUserMedia(constraints)
                   .then(stream => {
@@ -103,7 +102,6 @@ export default {
                       alert(`May the browser didn't support or there is some errors. ${error.message}`);
                   });
       },
-      
       stopCameraStream() {
         let tracks = this.$refs.camera.srcObject.getTracks();
   
@@ -111,7 +109,6 @@ export default {
                   track.stop();
               });
       },
-      
       takePhoto() {
         if(!this.isPhotoTaken) {
           this.isShotPhoto = true;
@@ -153,10 +150,9 @@ video{
 
 .contentTop {
   position: absolute;
+  left: 60px;
+  width: calc(100% - 170px);
   top: 80px;
-  left: 5px;
-  width: calc(100% - 50px);
-  /* height: calc(100% - 60px); */
   padding: 20px;
   border-radius: 30px;
   background-color: #fff;
@@ -174,7 +170,9 @@ video{
 
 .marketplace h1 {
   font-weight: 400;
-  font-size: 1.5rem;
+  font-size: 3rem;
+  margin-top: 0px;
+  margin-bottom: 0px;
 }
 
 .marketplace b {
@@ -184,7 +182,9 @@ video{
 
 .marketplace h2 {
   font-weight: 400;
-  font-size: 1.3rem;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  font-size: 2rem;
   text-align: left;
 }
 
@@ -199,7 +199,14 @@ video{
   display: inline-block;
   border-radius: 20px;
   font-size: 1.3rem;
+  margin: 20px;
   box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+}
+
+.topic{
+  text-align: center;
+  align-items: center;
+  display: block;
 }
 
 </style>

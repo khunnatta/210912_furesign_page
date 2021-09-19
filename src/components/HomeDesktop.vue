@@ -217,7 +217,7 @@ td {
 }
 
 .description {
-  margin-top: 20px;
+  margin-top: 20;
 }
 
 .create
@@ -247,9 +247,9 @@ display: block;  /* may not need this, but I've found I do */
 .subTopic2 h2{
   font-size: 2rem;
   float: right;
-  width: 22vw;
-  margin-top: 10%;
-  margin-right: 5vw;
+  width: 24vw;
+  margin-top: 7%;
+  margin-right: 4vw;
 }
 
 .subTopic2 img {
