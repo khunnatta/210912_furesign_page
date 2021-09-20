@@ -12,16 +12,22 @@ app.use(bodyParser.json());
 
 
 // find all item in database 
-app.get('/testnodeapi', (req, res) => {
-    connection.query('select * from testquerytable', (error, result, field) =>{
-        if(error) throw error;
+app.get('/productSerach', (req, res) => {
+    connection.query('select * from mockup_data', (error, result, field) =>{
         let message = "";
+        let errorMsg = false;
+        if(error){
+            message = error.message
+            errorMsg = true
+        }
         if(result === undefined || result.length === 0){
             message = "Empty";
-        }else{
+        }
+        else
+        {
             message = "Success!";
         }
-        return res.send({ error: false, data: result, message: message});
+        return res.send({ error: errorMsg, data: result, message: message});
     })
 }); 
 

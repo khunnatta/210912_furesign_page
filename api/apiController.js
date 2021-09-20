@@ -13,18 +13,21 @@ var app = (0, express_1.default)();
 app.use((0, cors_1.default)());
 app.use(body_parser_1.default.json());
 // find all item in database 
-app.get('/testnodeapi', function (req, res) {
-    connection_js_1.connection.query('select * from testquerytable', function (error, result, field) {
-        if (error)
-            throw error;
+app.get('/productSerach', function (req, res) {
+    connection_js_1.connection.query('select * from mockup_data', function (error, result, field) {
         var message = "";
+        var errorMsg = false;
+        if (error) {
+            message = error.message;
+            errorMsg = true;
+        }
         if (result === undefined || result.length === 0) {
             message = "Empty";
         }
         else {
             message = "Success!";
         }
-        return res.send({ error: false, data: result, message: message });
+        return res.send({ error: errorMsg, data: result, message: message });
     });
 });
 // get data by conditons with input parameter 
@@ -55,7 +58,7 @@ var upload = (0, multer_1.default)({
 // รับรูปเข้ามา จาก axios หน้าบ้าน 
 app.post('/single-file', upload.single('file'), function (req, res) {
     var _a, _b, _c, _d, _e, _f, _g, _h;
-    console.log(req.body.file);
+    console.log(req.file);
     var log_input = {
         fieldname: (_a = req.file) === null || _a === void 0 ? void 0 : _a.fieldname,
         originalname: (_b = req.file) === null || _b === void 0 ? void 0 : _b.originalname,
