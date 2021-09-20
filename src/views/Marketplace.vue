@@ -7,13 +7,16 @@
                   <h1>ทดลองค้นหาสินค้าด้วย<b>ภาพถ่าย</b></h1>
                 </section>
                 <div class="container">
+                  <h4 v-if="file !=''">Your file upload</h4>
+                  <p v-if="file !=''" >{{ this.file['name'] }}</p>
                   <div class="form-group">
                     <div class="upload-btn-wrapper">
-                      <button class="btn">Upload a file</button>
+                      <button v-if="file !=''" class="btn">Re-upload</button>
+                      <button v-if="file ===''" class="btn">Upload image</button>
                       <input type="file" id="file"  ref="file" v-on:change="handleFileUpload"   />
                     </div>
                   </div>
-                  <button v-on:click="submitFile">ค้นหาสินค้า</button>
+                  <button v-if="file !=''" v-on:click="submitFile">ค้นหาสินค้า</button>
                 </div>
 
                  <!-- Camera  -->
@@ -192,8 +195,8 @@ export default {
       },
 
       handleFileUpload(){
-        console.log(this.file)
         this.file = this.$refs.file.files[0];
+        console.log(this.file['name'])
       }
 
     }
